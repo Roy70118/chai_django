@@ -24,6 +24,7 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path('chaiapi/', include('chaiapi.urls')),  # include the chaiapi urls
     path("__reload__/", include("django_browser_reload.urls")),
-    path('favicon.ico', RedirectView.as_view(
-        url=staticfiles_storage.url('images/favicon.ico')))
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    # path('favicon.ico', RedirectView.as_view(
+    # url=staticfiles_storage.url('images/favicon.ico')))
+]
+# + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
