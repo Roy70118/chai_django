@@ -70,7 +70,8 @@ class ChaiCertificate(models.Model):
     chai = models.OneToOneField(
         ChaiVariety, on_delete=models.CASCADE, related_name='certificate')
     certificate_name = models.CharField(max_length=100)
-    issue_date = models.DateField(default=timezone.now)
+    issued_date = models.DateField(default=timezone.now)
+    valid_until = models.DateField(default=timezone.now)
 
     def __str__(self):
         return f'{self.certificate_name} for {self.chai.name}'
